@@ -4,6 +4,8 @@ using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
 using Newtonsoft.Json;
+using Lumina;
+using Lumina.Excel.Sheets;
 
 namespace PeepingTom.Ipc {
     [Serializable]
@@ -18,7 +20,7 @@ namespace PeepingTom.Ipc {
 
         public Targeter(IPlayerCharacter character) {
             this.Name = character.Name;
-            this.HomeWorldId = character.HomeWorld.Id;
+            this.HomeWorldId = character.HomeWorld.RowId;
             this.EntityId = character.EntityId;
             this.GameObjectId = character.GameObjectId;
             this.When = DateTime.UtcNow;
